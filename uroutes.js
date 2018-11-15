@@ -1,0 +1,10 @@
+var express=require('express');
+var cors=require('cors');
+var router=express.Router();
+var user_controller=require("../controllers/Usercontroller");
+router.get('/alldetails',cors(),user_controller.alluser_details);
+router.get('/userdetails/:id',cors(),user_controller.user_details);
+router.post('/ucreate',cors(),user_controller.user_create);
+router.patch('/update/:id',cors(),user_controller.user_update);
+router.delete('/delete/:id',cors(),user_controller.user_delete);
+module.exports=router;
